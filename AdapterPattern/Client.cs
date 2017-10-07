@@ -12,7 +12,11 @@ namespace AdapterPattern
         {
             IThreeHole threehole = new PowerAdapter();
             threehole.Request();
-            Console.ReadLine(); 
+            Console.ReadLine();
+
+            Target target = new PowerAdapterObject();
+            target.Request();
+            Console.ReadLine();
         }
     }
 }
