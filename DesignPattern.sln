@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural Pattern", "Struc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral Pattern", "Behavioral Pattern", "{A4C0FEFC-13CA-4EA8-87D0-2E1820B7B799}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Concurrency Pattern", "Concurrency Pattern", "{8D0AD465-E4C5-4162-A849-DC5203940080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerConsumerModel", "ProducerConsumerModel\ProducerConsumerModel.csproj", "{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{BDAE7238-D9AC-4937-B5FE-9B06BBB207CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDAE7238-D9AC-4937-B5FE-9B06BBB207CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDAE7238-D9AC-4937-B5FE-9B06BBB207CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +91,6 @@ Global
 		{C58ED4DE-952F-4FE7-8D76-387B3C6882B3} = {286158D8-EB96-4DBA-934B-F1AD61470094}
 		{28CE96B0-739C-4D03-B525-626F921EB170} = {286158D8-EB96-4DBA-934B-F1AD61470094}
 		{BDAE7238-D9AC-4937-B5FE-9B06BBB207CD} = {286158D8-EB96-4DBA-934B-F1AD61470094}
+		{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD} = {8D0AD465-E4C5-4162-A849-DC5203940080}
 	EndGlobalSection
 EndGlobal
