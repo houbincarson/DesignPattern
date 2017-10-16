@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,6 +49,13 @@ namespace TemplateMethod
             {
                 Console.Write(item + " ");
             }
+
+
+            string subClassStr = ConfigurationManager.AppSettings["subClass"];
+            var intBubbleSorter2 = (IntBubbleSorter)Assembly.Load("TemplateMethod").CreateInstance(subClassStr);
+            intBubbleSorter2.Sort(intArray);
+
+
             Console.Read();
 
 
