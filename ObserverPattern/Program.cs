@@ -15,6 +15,15 @@ namespace ObserverPattern
             tenxun.AddObserver(new Subscriber("Tom"));
             tenxun.Update();
             Console.ReadLine();
+
+
+            ConcreteSubject consubject = new ConcreteSubject();
+            consubject.Attach(new ConcreteObserver("X", consubject));
+            consubject.Attach(new ConcreteObserver("Y", consubject));
+            consubject.Attach(new ConcreteObserver("Z", consubject));
+            consubject.SubjectState = "ABC";
+            consubject.Notify();
+            Console.ReadKey();
         }
     }
 }
