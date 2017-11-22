@@ -59,35 +59,4 @@ namespace ObserverPattern
         public string SubjectState { get; set; }
     }
 
-    public interface ISubject
-    {
-        void Attach(Observer observer);
-        void Detach(Observer observer);
-        void Notify();
-        string SubjectState { get; set; }
-    }
-    public class Boss : ISubject
-    {
-        private readonly IList<Observer> _observers = new List<Observer>(); 
-        public event EventHandler Update;
-
-        public void Notify()
-        {
-            foreach (var observer in _observers)
-            {
-                observer.Update();
-            }
-        }
-        public string SubjectState { get; set; }
-
-        public void Attach(Observer observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void Detach(Observer observer)
-        {
-            _observers.Remove(observer);
-        }
-    }
 }
