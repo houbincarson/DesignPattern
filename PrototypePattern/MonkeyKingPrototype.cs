@@ -9,7 +9,8 @@ namespace PrototypePattern
     public abstract class MonkeyKingPrototype
     {
         public string Id { get; set; }
-        public MonkeyKingPrototype(string id)
+
+        protected MonkeyKingPrototype(string id)
         {
             this.Id = id;
         }

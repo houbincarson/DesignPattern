@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="FacadePattern.SystemFacade">
+    <Position X="4" Y="1.25" Width="2.25" />
+    <AssociationLine Name="auth" Type="FacadePattern.AuthoriationSystemA" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.219" Y="2.539" />
+        <Point X="4.219" Y="3.375" />
+        <Point X="2.438" Y="3.375" />
+        <Point X="2.438" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="netbank" Type="FacadePattern.NetBankSystemC" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.875" Y="2.539" />
+        <Point X="5.875" Y="3.375" />
+        <Point X="7.875" Y="3.375" />
+        <Point X="7.875" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAgAAAAAAAAAAEAAAAAAABAA=</HashCode>
+      <FileName>SystemFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="auth" />
+      <Field Name="netbank" />
+      <Field Name="security" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FacadePattern.AuthoriationSystemA">
+    <Position X="1.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>SystemFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FacadePattern.SecuritySystemB">
+    <Position X="4.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>SystemFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FacadePattern.NetBankSystemC">
+    <Position X="7" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>SystemFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

@@ -13,6 +13,7 @@ namespace CompositePattern
     /// 该抽象类就是文件夹抽象接口的定义，该类型就相当于是[抽象构件]Component类型
     public abstract class Folder
     {
+        public abstract void Operation();
         //增加文件夹或文件
         public abstract void Add(Folder folder);
         //删除文件夹或者文件
@@ -24,6 +25,11 @@ namespace CompositePattern
     }
     public sealed class Word : Folder
     {
+        public override void Operation()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Add(Folder folder)
         {
             throw new Exception("Word文档不具有该功能");
@@ -42,6 +48,11 @@ namespace CompositePattern
 
     public class SonFolder : Folder
     {
+        public override void Operation()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Add(Folder folder)
         {
             Console.WriteLine("文件或者文件夹已经增加成功");
