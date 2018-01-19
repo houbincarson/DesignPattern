@@ -22,7 +22,17 @@ namespace CommandPattern
             invoker.Undo();
             invoker.Redo();
 
+
+
+            PatrickLiuAndWife liuAndLai = new PatrickLiuAndWife();//命令接受者
+            Command command = new MakeDumplingsCommand(liuAndLai);//命令
+            PaPaInvoker papa = new PaPaInvoker(command); //命令请求者
+            papa.ExecuteCommand();
             Console.ReadKey();
         }
+
+        
+
+
     }
 }

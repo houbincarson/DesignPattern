@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Concurrency Pattern", "Conc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducerConsumerModel", "ProducerConsumerModel\ProducerConsumerModel.csproj", "{08FBF4AE-2744-4BD8-AC0F-0B2FA5361FBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{8521D2DF-4E82-4738-B413-9EBDC5173578}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethodPattern", "TemplateMethod\TemplateMethodPattern.csproj", "{8521D2DF-4E82-4738-B413-9EBDC5173578}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{A662CEFB-593B-4D6C-B5A4-44C47D72C33C}"
 EndProject
