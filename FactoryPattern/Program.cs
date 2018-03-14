@@ -32,12 +32,13 @@ namespace FactoryPattern
     {
     }
      //应该是一个工厂模式，创建了136、200、210等等模板；
-    public interface IPrintTemplate
+    public abstract class AbstracPrintTemplate
     {
-        void Print();
+        public string TemplateName;
+        public abstract void Print();
     }
 
-    public class PrintTemplate : IPrintTemplate
+    public class PrintTemplate : AbstracPrintTemplate
     {
         private readonly PrintDocument printDocument = new PrintDocument();
 
@@ -51,7 +52,7 @@ namespace FactoryPattern
 
         }
 
-        public void Print()
+        public override void Print()
         {
             printDocument.PrintPage += printDocument_PrintPage;
             printDocument.Print();
@@ -76,9 +77,14 @@ namespace FactoryPattern
             e.Graphics.DrawLine(new Pen(Color.Black, 0.2f), 1f, 20f, 99f, 20f);
             e.Graphics.DrawLine(new Pen(Color.Black, 0.2f), 1f, 40f, 99f, 40f); 
         }
+
+        public PrintTemplate()
+        {
+            TemplateName = "PrintTemplate";
+        }
     }
 
-    public class PrintTemplate136 : IPrintTemplate
+    public class PrintTemplate136 : AbstracPrintTemplate
     {
         private readonly PrintDocument printDocument = new PrintDocument();
 
@@ -87,12 +93,16 @@ namespace FactoryPattern
 
         }
 
+        public PrintTemplate136()
+        {
+            TemplateName = "PrintTemplate136";
+        }
         public PrintTemplate136(TagPrintModel tagPrintModel)
         {
 
         }
 
-        public void Print()
+        public override void Print()
         {
             printDocument.PrintPage += printDocument_PrintPage;
             printDocument.Print();
@@ -119,8 +129,12 @@ namespace FactoryPattern
         }
     }
 
-    public class PrintTemplate210 : IPrintTemplate
+    public class PrintTemplate210 : AbstracPrintTemplate
     {
+        public PrintTemplate210()
+        {
+            TemplateName = "PrintTemplate210";
+        }
         private readonly PrintDocument printDocument = new PrintDocument();
 
         public PrintTemplate210(List<LogisticsYdPrintModel> printModelList)
@@ -133,7 +147,7 @@ namespace FactoryPattern
 
         }
 
-        public void Print()
+        public override void Print()
         {
             printDocument.PrintPage += printDocument_PrintPage;
             printDocument.Print();
@@ -160,8 +174,12 @@ namespace FactoryPattern
         }
     }
 
-    public class PrintTemplate200 : IPrintTemplate
+    public class PrintTemplate200 : AbstracPrintTemplate
     {
+        public PrintTemplate200()
+        {
+            TemplateName = "PrintTemplate200";
+        }
         private readonly PrintDocument printDocument = new PrintDocument();
 
         public PrintTemplate200(List<LogisticsYdPrintModel> printModelList)
@@ -174,7 +192,7 @@ namespace FactoryPattern
 
         }
 
-        public void Print()
+        public override void Print()
         {
             printDocument.PrintPage += printDocument_PrintPage;
             printDocument.Print();
@@ -203,7 +221,7 @@ namespace FactoryPattern
 
     public class PrintTemplateFactory
     {
-        public IPrintTemplate GetPrintTemplate(string name)
+        public AbstracPrintTemplate GetPrintTemplate(string name)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -211,15 +229,15 @@ namespace FactoryPattern
             }
             if (name.Equals("136"))
             {
-                return new PrintTemplate136(new List<LogisticsYdPrintModel>());
+                return new PrintTemplate136();
             }
             else if (name.Equals("210"))
             {
-                return new PrintTemplate210(new List<LogisticsYdPrintModel>());
+                return new PrintTemplate210();
             }
             else
             {
-                return new PrintTemplate200(new List<LogisticsYdPrintModel>());
+                return new PrintTemplate200();
             }
         }
     }

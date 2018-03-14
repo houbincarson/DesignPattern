@@ -21,7 +21,6 @@ namespace BuilderPattern
             director.Construct(b2);
             Computer computer2 = b2.GetComputer();
             computer2.Show();
-
             Console.Read();
         }
     }

@@ -99,7 +99,7 @@ namespace BridgePattern
         }
     }
     #endregion
-    #region Model
+    #region 相当于三层架构中数据访问层（DAL）
     public abstract class DataAccess
     {
         // 对记录的增删改查操作
