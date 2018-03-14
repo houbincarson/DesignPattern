@@ -15,6 +15,8 @@ namespace StatePattern
         public double Interest { get; set; } // 利率
         public double LowerLimit { get; set; } // 下限
         public double UpperLimit { get; set; } // 上限
+
+
         public abstract void Deposit(double amount); // 存款
         public abstract void Withdraw(double amount); // 取钱
         public abstract void PayInterest(); // 获得的利息
@@ -25,8 +27,7 @@ namespace StatePattern
     /// </summary>
     public class RedState : State
     {
-        public RedState(State state)
-            : this(state.Balance, state.Account)
+        public RedState(State state): this(state.Balance, state.Account)
         {
             
         }
@@ -38,11 +39,7 @@ namespace StatePattern
             LowerLimit = -100.00;
             UpperLimit = 0.00;
         }
-        public override void Deposit(double amount)
-        {
-            Balance += amount;
-            StateChangeCheck();
-        }
+        
 
         private void StateChangeCheck()
         {
@@ -50,6 +47,11 @@ namespace StatePattern
             {
                 Account.State = new SilverState(this);
             }
+        }
+        public override void Deposit(double amount)
+        {
+            Balance += amount;
+            StateChangeCheck();
         }
 
         public override void Withdraw(double amount)
@@ -59,7 +61,7 @@ namespace StatePattern
 
         public override void PayInterest()
         {
-            // 没有利息
+            Console.WriteLine("没有利息！");
         }
     }
 
@@ -79,14 +81,6 @@ namespace StatePattern
             UpperLimit = 1000.00;
         }
 
-
-
-        public override void Deposit(double amount)
-        {
-            Balance += amount;
-            StateChangeCheck();
-        }
-
         private void StateChangeCheck()
         {
             if (Balance < LowerLimit)
@@ -98,7 +92,11 @@ namespace StatePattern
                 Account.State = new GoldState(this);
             }
         }
-
+        public override void Deposit(double amount)
+        {
+            Balance += amount;
+            StateChangeCheck();
+        }
         public override void Withdraw(double amount)
         {
             Balance -= amount;
@@ -176,27 +174,27 @@ namespace StatePattern
         public void Deposit(double amount)
         {
             State.Deposit(amount);
-            Console.WriteLine("存款金额为 {0:C}——", amount);
-            Console.WriteLine("账户余额为 =:{0:C}", this.Balance);
-            Console.WriteLine("账户状态为: {0}", this.State.GetType().Name);
+            Console.WriteLine("存款金额为 :{0:C}——", amount);
+            Console.WriteLine("账户余额为 :{0:C}", this.Balance);
+            Console.WriteLine("账户状态为 :{0}", this.State.GetType().Name);
             Console.WriteLine();
         }
 
         public void Withdraw(double amount)
         {
             State.Withdraw(amount);
-            Console.WriteLine("取款金额为 {0:C}——", amount);
-            Console.WriteLine("账户余额为 =:{0:C}", this.Balance);
-            Console.WriteLine("账户状态为: {0}", this.State.GetType().Name);
+            Console.WriteLine("取款金额为 :{0:C}——", amount);
+            Console.WriteLine("账户余额为 :{0:C}", this.Balance);
+            Console.WriteLine("账户状态为 :{0}", this.State.GetType().Name);
             Console.WriteLine();
         }
 
         public void PayInterest()
         {
             State.PayInterest();
-            Console.WriteLine("Interest Paid --- ");
-            Console.WriteLine("账户余额为 =:{0:C}", this.Balance);
-            Console.WriteLine("账户状态为: {0}", this.State.GetType().Name);
+            Console.WriteLine("结息金额支付 --- ");
+            Console.WriteLine("账户余额为 :{0:C}", this.Balance);
+            Console.WriteLine("账户状态为 :{0}", this.State.GetType().Name);
             Console.WriteLine();
         }
     }

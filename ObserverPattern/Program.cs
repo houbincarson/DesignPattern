@@ -23,7 +23,80 @@ namespace ObserverPattern
             consubject.Attach(new ConcreteObserver("Z", consubject));
             consubject.SubjectState = "ABC";
             consubject.Notify();
+
+            Cat cat = new Cat();
+            Mouse m = new Mouse();
+            People p = new People();
+            cat.Add(m);
+            cat.Add(p);
+            cat.Cryed();
+
+
             Console.ReadKey();
         }
+
+
+        public abstract class AbsSubject
+        {
+            public List<IOb> List = new List<IOb>();
+
+            public void Add(IOb ob)
+            {
+                List.Add(ob);
+            }
+
+            public  void Remove(IOb ob)
+            {
+                if (List.Contains(ob))
+                {
+                    List.Remove(ob);
+                }   
+            }
+            public abstract void Cryed();
+        }
+
+
+        public class Cat : AbsSubject
+        {
+            public override void Cryed()
+            {
+                Console.WriteLine("Cryed....");
+                foreach (IOb ob in List)
+                {
+                    if (ob!=null)
+                    {
+                        ob.DoSomething();
+                    }
+                }
+            }
+        }
+        public interface IOb
+        {
+            void DoSomething();
+        }
+        public class Mouse : IOb
+        {
+            public Mouse()
+            {
+              
+            }
+            public void DoSomething()
+            {
+                Console.WriteLine("Run....");
+            }
+        }
+
+        public class People : IOb
+        {
+            public People()
+            {
+                
+            }
+            public void DoSomething()
+            {
+                Console.WriteLine("Wake Up....");
+            }
+        }
+
     }
 }
